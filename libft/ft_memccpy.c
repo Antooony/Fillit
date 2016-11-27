@@ -6,7 +6,7 @@
 /*   By: adenis <adenis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 12:36:20 by adenis            #+#    #+#             */
-/*   Updated: 2016/11/09 11:58:23 by adenis           ###   ########.fr       */
+/*   Updated: 2016/11/27 16:11:04 by adenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 		if (t_src[i] == (unsigned char)c)
 		{
 			t_dst[i] = t_src[i];
-			return ((unsigned char *)&dst[i + 1]);
+			return ((unsigned char *)&t_dst[i + 1]);
 		}
 		t_dst[i] = t_src[i];
 		i++;

@@ -6,7 +6,7 @@
 /*   By: adenis <adenis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 16:23:24 by adenis            #+#    #+#             */
-/*   Updated: 2016/11/26 15:06:40 by adenis           ###   ########.fr       */
+/*   Updated: 2016/11/27 16:26:45 by adenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int		check_in(char *str)
 	return (0);
 }
 
-t_list	*get_tab(char **tab)
+t_list	*get_lst(char **tab)
 {
 	int		i;
 	t_list	*ret;
@@ -75,7 +75,9 @@ void	fillit(char *str)
 	t_list	*lst;
 
 	if(check_in(str) && ft_checkc(str) && ft_len(ft_strsplit(str, '\n')) <= 104)
-		lst = get_tab(ft_strsplit(str, '\n'));
+	{
+		lst = get_lst(ft_strsplit(str, '\n'));
+	}
 	else
 	{
 		lst = NULL;

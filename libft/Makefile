@@ -6,7 +6,7 @@
 #    By: adenis <adenis@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 16:45:23 by adenis            #+#    #+#              #
-#    Updated: 2016/11/22 13:27:39 by adenis           ###   ########.fr        #
+#    Updated: 2016/11/27 16:12:10 by adenis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 CC = gcc
@@ -33,13 +33,13 @@ FT_O =	ft_atoi.o ft_strlcat.o ft_strncmp.o ft_strnstr.o ft_memcmp.o ft_memchr.o 
 all : $(NAME)
 
 $(NAME) :
-	$(CC) $(CFLAGS) -I $(INCLUDESDIR) $(SRCS) 
-	ar rcs $(EXEC) $(FT_O)
+	@$(CC) $(CFLAGS) -I $(INCLUDESDIR) $(SRCS) 
+	@ar rcs $(EXEC) $(FT_O)
 
 clean :
-	rm -rf $(FT_O)
+	@rm -rf $(FT_O)
 
 fclean : clean
-	rm -rf $(EXEC)
+	@rm -rf $(EXEC)
 
 re : fclean all

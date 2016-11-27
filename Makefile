@@ -6,7 +6,7 @@
 #    By: adenis <adenis@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/24 16:01:35 by adenis            #+#    #+#              #
-#    Updated: 2016/11/26 16:05:08 by adenis           ###   ########.fr        #
+#    Updated: 2016/11/27 16:11:56 by adenis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ $(NAME): $(LIB_EXEC)
 
 $(LIB_EXEC):
 	@(cd $(LIB_DIR) && $(MAKE)
-	$(CC) $(CFLAGS) $(SRCS) $(HEADER) $(LIB_DIR)$(LIB_EXEC)
+	@$(CC) $(CFLAGS) $(SRCS) $(HEADER) $(LIB_DIR)$(LIB_EXEC)
 
 clean:
 	@(cd $(LIB_DIR) && $(MAKE) $@)
@@ -34,4 +34,4 @@ fclean:
 
 re : 
 	@(cd $(LIB_DIR) && $(MAKE) $@)
-	$(CC) $(CFLAGS) $(SRCS) $(HEADER) $(LIB_DIR)$(LIB_EXEC)
+	@$(CC) $(CFLAGS) $(SRCS) $(HEADER) $(LIB_DIR)$(LIB_EXEC)
