@@ -6,7 +6,7 @@
 /*   By: adenis <adenis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 14:28:55 by adenis            #+#    #+#             */
-/*   Updated: 2016/11/28 16:37:47 by adenis           ###   ########.fr       */
+/*   Updated: 2016/11/28 18:35:53 by adenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,22 +35,78 @@ static const char	*Table[] =
 	"#...##...#"
 };
 
-void			ft_rename(t_list *lst)
+static int	matrice[19][7] =
 {
-	static int	c = 'A';
-	char		*tmp;
+	{1, 0, 2, 0, 1, -1, 0},
+	{0, 1, 0, 2, 1, 1, 0},
+	{1, 0, 2, 0, 1, 1, 0},
+	{1, 0, 1, 1, 1, -1, 0},
+	{1, 0, 2, 0, 3, 0, 0},
+	{0, 1, 0, 2, 0, 3, 0},
+	{0, 1, 0, 2, 1, 2, 0},
+	{1, 0, 2, 0, 2, -1, 0},
+	{1, 0, 1, 1, 1, 2, 0},
+	{0, 1, 1, 0, 2, 0, 0},
+	{0, -1, 1, 0, 2, 0, 0},
+	{1, 0, 1, -1, 1, -2, 0},
+	{1, 0, 2, 0, 2, 1, 0},
+	{1, 0, 0, 1, 0, 1, 0},
+	{1, 0, 0, 1, 1, 1, 0},
+	{1, 0, 1, -1, 2, -1, 0},
+	{1, 0, 1, 1, 1, 2, 0},
+	{1, 0, 1, -1, 0, 1, 0},
+	{0, 1, 1, 1, 1, 2, 0},
+};
+
+int				ft_get_i(t_list *lst)
+{
 	int			i;
 
 	i = 0;
-	tmp = ft_strdup(lst->content);
-	while (tmp[i])
+	while (Table[i])
 	{
-		if (tmp[i] == '#')
-			tmp[i] = c;
+		if (!ft_strcmp(Table[i], lst->content))
+			break ;
 		i++;
 	}
-	lst->content = tmp;
-	c += 1;
+	if (i > 18)
+	{
+		ft_putstr_fd("error", 2);
+		exit(1);
+	}
+	return (i);
+}
+
+void			ft_printtab(int	*tab)
+{
+	int		i;
+
+	i = 0;
+	while (i < 7)
+	{
+		ft_putnbr(tab[i]);
+		i++;
+	}
+}
+
+void			ft_cpytab(int	*dst, int	*tab)
+{
+	int		i;
+
+	i = 0;
+	while (i < 7)
+	{
+		dst[i] = tab[i];
+		i++;
+	}
+}
+void			ft_getox(t_list *lst)
+{
+	static int	c = 'A';
+	
+	matrice[ft_get_i(lst)][6] = c;
+	lst->content = matrice[ft_get_i(lst)];
+	c++;
 }
 
 void			ft_check_tetri(t_list *lst)
