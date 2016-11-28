@@ -6,11 +6,51 @@
 /*   By: adenis <adenis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 16:23:24 by adenis            #+#    #+#             */
-/*   Updated: 2016/11/27 16:26:45 by adenis           ###   ########.fr       */
+/*   Updated: 2016/11/28 12:15:24 by adenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+
+int		ft_check_str(char *str)
+{
+	int		i;
+
+	i = 0;
+	while (*str)
+	{
+		if (*str == '#')
+			i++;
+		str++;
+	}
+	if (i == 4)
+		return (1);
+	return (0);
+}
+
+void	lstsub(t_list *lst)
+{
+	int		end;
+	int		start;
+	char	*tmp;
+
+	end = ft_strlen(lst->content);
+	start = 0;
+	tmp = ft_strdup(lst->content);
+	while (tmp[start] != '#')
+		start++;
+	while (tmp[end] != '#')
+		end--;
+	if (!ft_check_str(lst->content))
+	{
+		ft_putstr_fd("error", 2);
+		exit(0);
+	}
+	tmp = ft_strsub(lst->content, start, (end - start) + 1);
+	free(lst->content);
+	lst->content = tmp;
+	lst->content_size = ft_strlen(tmp);
+}
 
 int		check_in(char *str)
 {
@@ -74,21 +114,18 @@ void	fillit(char *str)
 {
 	t_list	*lst;
 
-	if(check_in(str) && ft_checkc(str) && ft_len(ft_strsplit(str, '\n')) <= 104)
+	if (check_in(str) && ft_check(str) && ft_len(ft_strsplit(str, '\n')) <= 104)
 	{
 		lst = get_lst(ft_strsplit(str, '\n'));
+		ft_lstiter(lst, &lstsub);
 	}
 	else
-	{
 		lst = NULL;
-		ft_putstr("invalid map");
-	}
-	if (lst)
+	if (!lst)
+		ft_putstr_fd("error", 2);
+	while (lst)
 	{
-		while (lst)
-		{
-			ft_putendl(lst->content);
-			lst = lst->next;
-		}
+		ft_putendl(lst->content);
+		lst = lst->next;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: adenis <adenis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 15:03:35 by adenis            #+#    #+#             */
-/*   Updated: 2016/11/26 15:03:54 by adenis           ###   ########.fr       */
+/*   Updated: 2016/11/28 12:17:05 by adenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*get_str(char *str, char *tab)
 	return (str);
 }
 
-int		ft_checkc(char *s)
+int		ft_check(char *s)
 {
 	while (*s)
 	{
@@ -56,7 +56,7 @@ int		ft_len(char **tab)
 	int		i;
 
 	i = 0;
-	while(*tab)
+	while (*tab)
 	{
 		tab++;
 		i++;

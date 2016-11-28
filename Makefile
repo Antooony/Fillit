@@ -6,7 +6,7 @@
 #    By: adenis <adenis@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/24 16:01:35 by adenis            #+#    #+#              #
-#    Updated: 2016/11/27 16:11:56 by adenis           ###   ########.fr        #
+#    Updated: 2016/11/28 12:16:39 by adenis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ $(NAME): $(LIB_EXEC)
 	$(CC) $(CFLAGS) $(SRCS) $(HEADER) $(LIB_DIR)$(LIB_EXEC)
 
 $(LIB_EXEC):
-	@(cd $(LIB_DIR) && $(MAKE)
+	@(cd $(LIB_DIR) && $(MAKE))
 	@$(CC) $(CFLAGS) $(SRCS) $(HEADER) $(LIB_DIR)$(LIB_EXEC)
 
 clean:
