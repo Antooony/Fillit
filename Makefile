@@ -6,32 +6,42 @@
 #    By: adenis <adenis@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/24 16:01:35 by adenis            #+#    #+#              #
-#    Updated: 2016/11/28 12:16:39 by adenis           ###   ########.fr        #
+#    Updated: 2016/11/28 14:00:39 by adenis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 LIB_EXEC = libft.a
+EXEC = fillit.a
 LIB_DIR = ./libft/
 SRCS = fillit.c main.c various_ft.c
+OBJS = $(SRCS:.c=.o)
 HEADER = fillit.h
+NAME = fillit
 
 all: $(NAME)
 
-$(NAME): $(LIB_EXEC)
-	$(CC) $(CFLAGS) $(SRCS) $(HEADER) $(LIB_DIR)$(LIB_EXEC)
+$(NAME):
+	@$(CC) $(CFLAGS) -c $(SRCS)
+	@ar rcs $(EXEC) $(OBJS)
+	@$(CC) $(CFLAGS) $(EXEC) $(LIB_DIR)$(LIB_EXEC) -o $(NAME)
 
-$(LIB_EXEC):
+clean :
+	@rm -rf $(OBJS) $(EXEC)
+
+fclean : clean
+	@rm -rf $(NAME)
+
+re : fclean all
+
+lib:
 	@(cd $(LIB_DIR) && $(MAKE))
-	@$(CC) $(CFLAGS) $(SRCS) $(HEADER) $(LIB_DIR)$(LIB_EXEC)
 
-clean:
-	@(cd $(LIB_DIR) && $(MAKE) $@)
+libclean:
+	@(cd $(LIB_DIR) && $(MAKE) clean)
 
-fclean:
-	@(cd $(LIB_DIR) && $(MAKE) $@)
+libfclean:
+	@(cd $(LIB_DIR) && $(MAKE) fclean)
 
-re : 
-	@(cd $(LIB_DIR) && $(MAKE) $@)
-	@$(CC) $(CFLAGS) $(SRCS) $(HEADER) $(LIB_DIR)$(LIB_EXEC)
+libre : libfclean lib
