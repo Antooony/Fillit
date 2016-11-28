@@ -6,7 +6,7 @@
 #    By: adenis <adenis@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 16:45:23 by adenis            #+#    #+#              #
-#    Updated: 2016/11/27 16:12:10 by adenis           ###   ########.fr        #
+#    Updated: 2016/11/28 14:13:25 by adenis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 CC = gcc
@@ -22,22 +22,16 @@ SRCS =	ft_atoi.c ft_strlcat.c ft_strncmp.c ft_strnstr.c ft_memcmp.c ft_memchr.c 
 		ft_strnequ.c ft_strsub.c ft_strjoin.c ft_strtrim.c ft_itoa.c ft_strsplit.c ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c \
 		ft_lstiter.c ft_lstmap.c ft_lstsplit.c
 
-FT_O =	ft_atoi.o ft_strlcat.o ft_strncmp.o ft_strnstr.o ft_memcmp.o ft_memchr.o ft_memmove.o ft_memccpy.o \
-		ft_bzero.o ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o ft_memcpy.o ft_memset.o \
-		ft_putchar.o ft_putchar_fd.o ft_putendl.o ft_putendl_fd.o ft_putnbr.o ft_putnbr_fd.o ft_putstr.o ft_putstr_fd.o \
-		ft_strcat.o ft_strchr.o ft_strcmp.o ft_strcpy.o ft_strdup.o ft_strlen.o ft_strncat.o ft_strncpy.o ft_strrchr.o \
-		ft_strstr.o ft_tolower.o ft_toupper.o ft_memalloc.o ft_memdel.o ft_strnew.o ft_strdel.o ft_strclr.o ft_striter.o ft_striteri.o \
-		ft_strmap.o ft_strmapi.o ft_strequ.o ft_strnequ.o ft_strsub.o ft_strjoin.o ft_strtrim.o ft_itoa.o ft_strsplit.o ft_lstnew.o \
-		ft_lstdelone.o ft_lstdel.o ft_lstadd.o ft_lstiter.o ft_lstmap.o ft_lstsplit.o
+OBJS = $(SRCS:.c=.o)
 
 all : $(NAME)
 
 $(NAME) :
 	@$(CC) $(CFLAGS) -I $(INCLUDESDIR) $(SRCS) 
-	@ar rcs $(EXEC) $(FT_O)
+	@ar rcs $(EXEC) $(OBJS)
 
 clean :
-	@rm -rf $(FT_O)
+	@rm -rf $(OBJS)
 
 fclean : clean
 	@rm -rf $(EXEC)
