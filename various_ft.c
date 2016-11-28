@@ -6,7 +6,7 @@
 /*   By: adenis <adenis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 15:03:35 by adenis            #+#    #+#             */
-/*   Updated: 2016/11/28 12:28:59 by adenis           ###   ########.fr       */
+/*   Updated: 2016/11/28 15:36:23 by adenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,19 @@ char	*get_str(char *str, char *tab)
 
 int		ft_check(char *s)
 {
+	int		i;
+
+	i = 0;
 	while (*s)
 	{
 		if (*s != '\n' && *s != '.' && *s != '#')
 			return (0);
+		if (*s == '#')
+			i++;
 		s++;
 	}
+	if (i == 0)
+		return (0);
 	return (1);
 }
 

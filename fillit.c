@@ -6,7 +6,7 @@
 /*   By: adenis <adenis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 16:23:24 by adenis            #+#    #+#             */
-/*   Updated: 2016/11/28 12:29:01 by adenis           ###   ########.fr       */
+/*   Updated: 2016/11/28 15:37:34 by adenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,14 +118,20 @@ void	fillit(char *str)
 	{
 		lst = get_lst(ft_strsplit(str, '\n'));
 		ft_lstiter(lst, &lstsub);
+		ft_lstiter(lst, &ft_check_tetri);
+		ft_lstiter(lst, ft_rename);
 	}
 	else
 		lst = NULL;
 	if (!lst)
 		ft_putstr_fd("error", 2);
-	while (lst)
+	else
 	{
-		ft_putendl(lst->content);
-		lst = lst->next;
+		ft_putendl("carte valide");
+		while (lst)
+		{
+			ft_putendl(lst->content);
+			lst = lst->next;
+		}
 	}
 }
