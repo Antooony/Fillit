@@ -6,7 +6,7 @@
 /*   By: adenis <adenis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 16:23:24 by adenis            #+#    #+#             */
-/*   Updated: 2016/11/28 18:34:21 by adenis           ###   ########.fr       */
+/*   Updated: 2016/11/28 21:44:07 by adenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,6 +131,7 @@ void	fillit(char *str)
 		while (lst)
 		{
 			ft_printtab(lst->content);
+			ft_putchar(lst->letter);
 			ft_putchar('\n');
 			lst = lst->next;
 		}
