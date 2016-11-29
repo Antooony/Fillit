@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_tab.c                                    :+:      :+:    :+:   */
+/*   ft_lstadd_end.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adenis <adenis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/29 10:57:26 by adenis            #+#    #+#             */
-/*   Updated: 2016/11/29 11:17:50 by adenis           ###   ########.fr       */
+/*   Created: 2016/11/29 11:03:13 by adenis            #+#    #+#             */
+/*   Updated: 2016/11/29 11:04:06 by adenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			ft_putnbr_tab(int *tab)
+void	ft_lstadd_end(t_list *alst, t_list *new)
 {
-	int		i;
-
-	i = 0;
-	while (i < 6)
-	{
-		ft_putnbr(tab[i]);
-		i++;
-	}
+	if (alst && new && alst->next)
+		ft_lstadd_end(alst->next, new);
+	else
+		alst->next = new;
 }

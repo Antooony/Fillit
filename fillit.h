@@ -6,7 +6,7 @@
 /*   By: adenis <adenis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 16:16:10 by adenis            #+#    #+#             */
-/*   Updated: 2016/11/29 10:53:39 by adenis           ###   ########.fr       */
+/*   Updated: 2016/11/29 11:21:24 by adenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,18 @@
 # include <fcntl.h>
 
 void					fillit(char *str);
-void					ft_lstadd_end(t_list *alst, t_list *new);
+int						ft_check(char *s);
+int						ft_check_str(char *str);
+int						check_in(char *str);
+void					ft_check_tetri(t_list *lst);
+
 char					*ft_get_ret(char *dest, char *src);
 char					*get_str(char *str, char *tab);
-int						ft_check(char *s);
-int						check_in(char *str);
-t_list					*get_tab(char **tab);
-void					fillit(char *str);
-void					ft_check_tetri(t_list *lst);
-void					ft_rename(t_list *lst);
-void					ft_printtab(int	*tab);
 void					ft_getox(t_list *lst);
+void					lstsub(t_list *lst);
+t_list					*get_lst(char **tab);
+
+int						ft_get_i(t_list *lst);
+void					ft_cpytab(int	*dst, int	*tab);
 
 #endif

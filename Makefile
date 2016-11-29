@@ -6,7 +6,7 @@
 #    By: adenis <adenis@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/24 16:01:35 by adenis            #+#    #+#              #
-#    Updated: 2016/11/28 16:40:33 by adenis           ###   ########.fr        #
+#    Updated: 2016/11/29 11:15:37 by adenis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CFLAGS = -Wall -Wextra -Werror
 LIB_EXEC = libft.a
 EXEC = fillit.a
 LIB_DIR = ./libft/
-SRCS = fillit.c main.c various_ft.c ft_check_tetri.c
+SRCS = fillit.c main.c various_ft.c ft_check_tetri.c checks.c
 OBJS = $(SRCS:.c=.o)
 HEADER = fillit.h
 NAME = fillit
