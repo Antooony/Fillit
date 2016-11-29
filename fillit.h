@@ -6,7 +6,7 @@
 /*   By: adenis <adenis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 16:16:10 by adenis            #+#    #+#             */
-/*   Updated: 2016/11/29 11:21:24 by adenis           ###   ########.fr       */
+/*   Updated: 2016/11/29 11:50:43 by adenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,7 @@ t_list					*get_lst(char **tab);
 
 int						ft_get_i(t_list *lst);
 void					ft_cpytab(int	*dst, int	*tab);
+void					printparams(t_list *lst);
+void					printtetri(t_list *lst, int	i);
 
 #endif
