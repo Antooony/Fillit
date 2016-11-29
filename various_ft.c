@@ -6,7 +6,7 @@
 /*   By: adenis <adenis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 15:03:35 by adenis            #+#    #+#             */
-/*   Updated: 2016/11/28 15:36:23 by adenis           ###   ########.fr       */
+/*   Updated: 2016/11/29 10:52:16 by adenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int		ft_check(char *s)
 	return (1);
 }
 
-int		ft_len(char **tab)
+int		ft_tablen(char **tab)
 {
 	int		i;
 

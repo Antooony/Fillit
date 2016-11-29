@@ -6,7 +6,7 @@
 /*   By: adenis <adenis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 16:23:24 by adenis            #+#    #+#             */
-/*   Updated: 2016/11/28 21:44:07 by adenis           ###   ########.fr       */
+/*   Updated: 2016/11/29 10:58:37 by adenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ void	fillit(char *str)
 {
 	t_list	*lst;
 
-	if (check_in(str) && ft_check(str) && ft_len(ft_strsplit(str, '\n')) <= 104)
+	if (check_in(str) && ft_check(str) && ft_tablen(ft_strsplit(str, '\n')) <= 104)
 	{
 		lst = get_lst(ft_strsplit(str, '\n'));
 		ft_lstiter(lst, &lstsub);
@@ -130,7 +130,8 @@ void	fillit(char *str)
 		ft_putendl("carte valide");
 		while (lst)
 		{
-			ft_printtab(lst->content);
+			ft_putnbr_tab(lst->content);
+			ft_putchar(' ');
 			ft_putchar(lst->letter);
 			ft_putchar('\n');
 			lst = lst->next;

@@ -6,7 +6,7 @@
 /*   By: adenis <adenis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 14:28:55 by adenis            #+#    #+#             */
-/*   Updated: 2016/11/28 21:42:13 by adenis           ###   ########.fr       */
+/*   Updated: 2016/11/29 10:58:12 by adenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,18 +75,6 @@ int				ft_get_i(t_list *lst)
 		exit(1);
 	}
 	return (i);
-}
-
-void			ft_printtab(int	*tab)
-{
-	int		i;
-
-	i = 0;
-	while (i < 6)
-	{
-		ft_putnbr(tab[i]);
-		i++;
-	}
 }
 
 void			ft_cpytab(int	*dst, int	*tab)
