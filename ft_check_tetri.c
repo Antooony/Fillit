@@ -6,13 +6,13 @@
 /*   By: adenis <adenis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 14:28:55 by adenis            #+#    #+#             */
-/*   Updated: 2016/11/29 13:13:03 by adenis           ###   ########.fr       */
+/*   Updated: 2016/11/29 13:47:04 by adenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-static const char	*Table[] =
+static const char *g_table[] =
 {
 	"#..###",
 	"#...##..#",
@@ -35,7 +35,7 @@ static const char	*Table[] =
 	"#...##...#"
 };
 
-static int			matrice[19][6] =
+static int	g_matrice[19][6] =
 {
 	{1, 0, 2, 0, 1, -1},
 	{0, 1, 0, 2, 1, 1},
@@ -65,7 +65,7 @@ void		ft_check_tetri(t_list *lst)
 	i = 0;
 	while (i < 19)
 	{
-		if (!ft_strcmp(Table[i], lst->content))
+		if (!ft_strcmp(g_table[i], lst->content))
 			break ;
 		i++;
 	}
@@ -83,7 +83,7 @@ int			ft_get_i(t_list *lst)
 	i = 0;
 	while (i < 19)
 	{
-		if (!ft_strcmp(Table[i], lst->content))
+		if (!ft_strcmp(g_table[i], lst->content))
 			break ;
 		i++;
 	}
@@ -99,7 +99,7 @@ void		ft_getox(t_list *lst)
 {
 	static int	c = 'A';
 
-	lst->content = matrice[ft_get_i(lst)];
+	lst->content = g_matrice[ft_get_i(lst)];
 	lst->letter = c;
 	c++;
 }
