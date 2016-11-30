@@ -6,7 +6,7 @@
 /*   By: adenis <adenis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 16:23:24 by adenis            #+#    #+#             */
-/*   Updated: 2016/11/29 17:31:10 by adenis           ###   ########.fr       */
+/*   Updated: 2016/11/30 12:08:30 by adenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ char	**ft_creategrid(int	i)
 	return (tab);
 }
 
-char	**testgrid(t_list *lst, int	x, int	y, char **tab)
+char	**fillgrid(t_list *lst, int	x, int	y, char **tab)
 {
 	int		*fig;
 	int		k;
@@ -67,15 +67,56 @@ char	**testgrid(t_list *lst, int	x, int	y, char **tab)
 	k = 0;
 	fig = (int *)lst->content;
 	y -= ft_checkneg(fig);
-	if (tab[y + fig[1]][x + fig[0]] == '.' && 
-			tab[y + fig[3]][x + fig[2]] == '.' &&
-				tab[y + fig[5]][x + fig[4]] == '.' &&
-					tab[y][x] == '.')
-	{
 		tab[y][x] = lst->letter;
 		tab[y + fig[1]][x + fig[0]] = lst->letter;
 		tab[y + fig[3]][x + fig[2]] = lst->letter;
 		tab[y + fig[5]][x + fig[4]] = lst->letter;
+	return (tab);
+}
+
+int		testgrid(t_list *lst, int	x, int	y, char **tab)
+{
+	int		*fig;
+	int		k;
+
+	k = 0;
+	fig = (int *)lst->content;
+	y -= ft_checkneg(fig);
+	if (tab[y + fig[1]][x + fig[0]] == '.' && tab[y + fig[1]][x + fig[0]] &&
+			tab[y + fig[3]][x + fig[2]] == '.' && tab[y + fig[3]][x + fig[2]] &&
+				tab[y + fig[5]][x + fig[4]] == '.' && tab[y + fig[5]][x + fig[4]] &&
+					tab[y][x] == '.' && tab[y][x])
+		return (1);
+	return (0);
+}
+
+char	**ft_check_and_fill(t_list *lst, char **tab)
+{
+	int		x;
+	int		y;
+	int		max;
+
+	x = 0;
+	y = 0;
+	max = ft_strlen(tab[0]);
+	while (y < max - 2)
+	{
+		x = 0;
+		while (x < max - 2)
+		{
+			if (testgrid(lst, x, y, tab))
+			{
+				tab = fillgrid(lst, x, y, tab);
+				if (lst->next)
+					lst = lst->next;
+				else
+					break;
+			}
+			x++;
+		}
+		if (!lst->next)
+			break;
+		y++;
 	}
 	return (tab);
 }
@@ -107,6 +148,7 @@ void	fillit(char *str)
 	char	**tab;
 	int		i;
 	
+	i = 0;
 	if (check_in(str) && ft_check(str) && \
 		ft_tablen(ft_strsplit(str, '\n')) <= 104)
 	{
@@ -124,20 +166,16 @@ void	fillit(char *str)
 	}
 	else
 	{
-		tab = ft_creategrid(4);
-		while (lst)
-		{
-			tab = testgrid(lst, 0, 0, tab);
-			lst = lst->next;
-			i = 0;
+		tab = ft_creategrid(12);
+		// tab = fillgrid(lst, 0, 0, tab);
+		tab = ft_check_and_fill(lst, tab);
+
 			while (tab[i])
 			{
 				ft_putendl(tab[i]);
 				i++;
 			}
 			ft_putchar('\n');
-			tab = ft_creategrid(4);
-		}
 		
 	}
 		// printparams(lst);
