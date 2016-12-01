@@ -6,7 +6,7 @@
 /*   By: adenis <adenis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 14:28:55 by adenis            #+#    #+#             */
-/*   Updated: 2016/11/29 16:34:11 by adenis           ###   ########.fr       */
+/*   Updated: 2016/12/01 13:59:56 by adenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void		ft_check_tetri(t_list *lst)
 	}
 	if (i == 19)
 	{
-		ft_putstr_fd("error", 2);
+		ft_putendl("error");
 		exit(1);
 	}
 }
@@ -89,7 +89,7 @@ int			ft_get_i(t_list *lst)
 	}
 	if (i == 19)
 	{
-		ft_putstr_fd("error", 2);
+		ft_putendl("error");
 		exit(1);
 	}
 	return (i);

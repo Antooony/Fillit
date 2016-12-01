@@ -6,7 +6,7 @@
 /*   By: adenis <adenis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 16:46:11 by adenis            #+#    #+#             */
-/*   Updated: 2016/11/29 11:18:15 by adenis           ###   ########.fr       */
+/*   Updated: 2016/12/01 14:22:10 by adenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ struct					s_list
 	void				*content;
 	size_t				content_size;
 	char				letter;
+	int					used;
 	t_list				*next;
 };
 

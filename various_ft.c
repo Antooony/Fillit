@@ -6,7 +6,7 @@
 /*   By: adenis <adenis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 15:03:35 by adenis            #+#    #+#             */
-/*   Updated: 2016/11/29 11:18:41 by adenis           ###   ########.fr       */
+/*   Updated: 2016/12/01 13:59:44 by adenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	lstsub(t_list *lst)
 		end--;
 	if (!ft_check_str(lst->content))
 	{
-		ft_putstr_fd("error", 2);
+		ft_putendl("error");
 		exit(0);
 	}
 	tmp = ft_strsub(lst->content, start, (end - start) + 1);

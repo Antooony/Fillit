@@ -6,7 +6,7 @@
 /*   By: adenis <adenis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 15:11:32 by adenis            #+#    #+#             */
-/*   Updated: 2016/11/26 13:13:40 by adenis           ###   ########.fr       */
+/*   Updated: 2016/12/01 13:59:22 by adenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_create_str(char **argv)
 			return (str);
 		}
 	}
-	ft_putendl("Error\n");
+	ft_putendl("error");
 	return (NULL);
 }
 
@@ -49,5 +49,7 @@ int		main(int argc, char **argv)
 			fillit(str);
 		}
 	}
+	else
+		ft_putendl("usage: ./fillit source_file");
 	return (0);
 }
