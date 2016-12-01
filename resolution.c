@@ -6,7 +6,7 @@
 /*   By: adenis <adenis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 14:21:17 by adenis            #+#    #+#             */
-/*   Updated: 2016/12/01 16:44:15 by adenis           ###   ########.fr       */
+/*   Updated: 2016/12/01 19:08:09 by adenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,11 @@ char	**ft_check_and_fill(t_list *lst, char **tab, int len)
 		x = 0;
 		while (x < len && lst)
 		{
-			if (testgrid(lst, x, y, tab))
+			if (testfig(lst, x, y, tab))
 			{
 				tab = fillgrid(&lst, x, y, tab);
 				lst = lst->next;
+
 				y = 0;
 			}
 			x++;
