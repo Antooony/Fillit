@@ -6,7 +6,7 @@
 /*   By: adenis <adenis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 12:37:54 by adenis            #+#    #+#             */
-/*   Updated: 2016/12/01 19:06:27 by adenis           ###   ########.fr       */
+/*   Updated: 2016/12/01 19:18:17 by adenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,8 @@ int		testfig(t_list *lst, int x, int y, char **tab)
 	len = ft_tablen(tab);
 	fig = (int *)lst->content;
 	y -= ft_checkneg(fig);
-	if (y < len && (y + fig[1] < len) && (y + fig[3] < len) && (y + fig[5] < len))
+	if (y < len && (y + fig[1] < len) &&
+			(y + fig[3] < len) && (y + fig[5] < len))
 	{
 		if (tab[y + fig[1]][x + fig[0]] == '.' &&
 				tab[y + fig[3]][x + fig[2]] == '.' &&

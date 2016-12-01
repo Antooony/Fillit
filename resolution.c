@@ -6,7 +6,7 @@
 /*   By: adenis <adenis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 14:21:17 by adenis            #+#    #+#             */
-/*   Updated: 2016/12/01 19:08:09 by adenis           ###   ########.fr       */
+/*   Updated: 2016/12/01 19:24:48 by adenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		ft_fullused(t_list *lst)
 		if (lst->used)
 			lst = lst->next;
 		else
-			break;
+			break ;
 	}
 	if (!lst)
 		return (1);
@@ -42,7 +42,6 @@ char	**ft_check_and_fill(t_list *lst, char **tab, int len)
 			{
 				tab = fillgrid(&lst, x, y, tab);
 				lst = lst->next;
-
 				y = 0;
 			}
 			x++;
@@ -54,15 +53,12 @@ char	**ft_check_and_fill(t_list *lst, char **tab, int len)
 
 void	ft_solve_it(t_list *lst, int len)
 {
-	char **tab;
+	char 	**tab;
+
 	tab = ft_creategrid(len);
 	tab = ft_check_and_fill(lst, tab, len);
 	if (ft_fullused(lst))
 		ft_return(tab);
 	else
-	{
-		ft_return(tab);
-		ft_putendl("\nToo Small !!\nnew try :\n");
 		ft_solve_it(lst, len + 1);
-	}
 }
