@@ -6,7 +6,7 @@
 /*   By: adenis <adenis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 15:03:35 by adenis            #+#    #+#             */
-/*   Updated: 2016/12/02 18:02:46 by adenis           ###   ########.fr       */
+/*   Updated: 2016/12/02 18:34:25 by adenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,12 @@ t_list	*get_lst(char **tab)
 	t_list	*new;
 	char	*str;
 
-	i = 0;
+	i = -1;
 	str = NULL;
 	ret = ft_lstnew(NULL, 0);
 	while (*tab)
 	{
-		if (i == 4)
+		if (++i == 4)
 		{
 			new = ft_lstnew(ft_strdup(str), ft_strlen(str) + 1);
 			ft_lstadd_end(ret, new);
@@ -77,7 +77,6 @@ t_list	*get_lst(char **tab)
 		}
 		str = get_str(str, *tab);
 		tab++;
-		i++;
 	}
 	new = ft_lstnew(ft_strdup(str), ft_strlen(str) + 1);
 	ft_lstadd_end(ret, new);
