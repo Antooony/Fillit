@@ -6,7 +6,7 @@
 /*   By: adenis <adenis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 16:23:24 by adenis            #+#    #+#             */
-/*   Updated: 2016/12/01 18:36:39 by adenis           ###   ########.fr       */
+/*   Updated: 2016/12/02 18:00:34 by adenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,5 @@ void	fillit(char *str)
 		ft_putendl("error");
 		exit(1);
 	}
-	ft_solve_it(lst, 4);
+	ft_solve_it(lst, 2);
 }

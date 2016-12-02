@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_end.c                                    :+:      :+:    :+:   */
+/*   ft_lst_go_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adenis <adenis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/29 11:03:13 by adenis            #+#    #+#             */
-/*   Updated: 2016/12/02 14:56:30 by adenis           ###   ########.fr       */
+/*   Created: 2016/12/02 18:04:32 by adenis            #+#    #+#             */
+/*   Updated: 2016/12/02 18:05:09 by adenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_end(t_list *alst, t_list *new)
+t_list	*ft_go_back(t_list *lst)
 {
-	if (alst && new && alst->next)
-		ft_lstadd_end(alst->next, new);
-	else
-	{
-		alst->next = new;
-		new->prev = alst;
-	}
+	while (lst->prev)
+		lst = lst->prev;
+	lst = lst->next;
+	return (lst);
 }

@@ -6,7 +6,7 @@
 /*   By: adenis <adenis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 15:03:35 by adenis            #+#    #+#             */
-/*   Updated: 2016/12/01 13:59:44 by adenis           ###   ########.fr       */
+/*   Updated: 2016/12/02 18:02:46 by adenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ t_list	*get_lst(char **tab)
 	}
 	new = ft_lstnew(ft_strdup(str), ft_strlen(str) + 1);
 	ft_lstadd_end(ret, new);
+	new->prev = ret;
 	ret = ret->next;
 	return (ret);
 }

@@ -6,7 +6,7 @@
 /*   By: adenis <adenis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 16:46:11 by adenis            #+#    #+#             */
-/*   Updated: 2016/12/01 14:22:10 by adenis           ###   ########.fr       */
+/*   Updated: 2016/12/02 18:05:26 by adenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ struct					s_list
 	char				letter;
 	int					used;
 	t_list				*next;
+	t_list				*prev;
 };
 
 void					ft_putchar(char c);
@@ -97,6 +98,7 @@ void					ft_lstadd_end(t_list *alst, t_list *new);
 void					ft_lstadd(t_list **alst, t_list *new);
 void					ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list					*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+t_list					*ft_go_back(t_list *lst);
 
 int						ft_tablen(char **tab);
 void					ft_putnbr_tab(int	*tab);

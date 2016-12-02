@@ -6,7 +6,7 @@
 /*   By: adenis <adenis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 09:39:50 by adenis            #+#    #+#             */
-/*   Updated: 2016/12/01 14:22:28 by adenis           ###   ########.fr       */
+/*   Updated: 2016/12/02 14:59:23 by adenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ t_list		*ft_lstnew(void const *content, size_t content_size)
 			new->content_size = content_size;
 		}
 		new->next = NULL;
+		new->prev = NULL;
 		return (new);
 	}
 	return (NULL);

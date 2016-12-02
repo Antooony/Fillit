@@ -6,7 +6,7 @@
 /*   By: adenis <adenis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 16:16:10 by adenis            #+#    #+#             */
-/*   Updated: 2016/12/01 18:36:01 by adenis           ###   ########.fr       */
+/*   Updated: 2016/12/02 16:26:04 by adenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int						ft_checkneg(int	*tab);
 char					**ft_creategrid(int i);
 char					**fillgrid(t_list **lst, int	x, int	y, char **tab);
 int						testfig(t_list *lst, int	x, int	y, char **tab);
-char					**ft_check_and_fill(t_list *lst, char **tab, int len);
+int						ft_check_and_fill(t_list *lst, char ***tab, int len);
 
 void					ft_return(char **tab);
 int						ft_sqrtt(int nb);

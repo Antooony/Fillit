@@ -6,7 +6,7 @@
 /*   By: adenis <adenis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 12:37:54 by adenis            #+#    #+#             */
-/*   Updated: 2016/12/01 19:18:17 by adenis           ###   ########.fr       */
+/*   Updated: 2016/12/02 15:32:59 by adenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ char	**fillgrid(t_list **lst, int x, int y, char **tab)
 
 	k = 0;
 	bli = *lst;
+	if (bli->used)
+		return (tab);
 	fig = (int *)bli->content;
 	y -= ft_checkneg(fig);
 	tab[y][x] = bli->letter;
