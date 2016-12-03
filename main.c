@@ -6,7 +6,7 @@
 /*   By: adenis <adenis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 15:11:32 by adenis            #+#    #+#             */
-/*   Updated: 2016/12/01 13:59:22 by adenis           ###   ########.fr       */
+/*   Updated: 2016/12/02 20:25:05 by adenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,6 @@ int		main(int argc, char **argv)
 	}
 	else
 		ft_putendl("usage: ./fillit source_file");
+	ft_strdel(&str);
 	return (0);
 }

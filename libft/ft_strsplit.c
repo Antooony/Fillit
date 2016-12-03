@@ -6,7 +6,7 @@
 /*   By: adenis <adenis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 16:47:17 by adenis            #+#    #+#             */
-/*   Updated: 2016/11/25 10:42:15 by adenis           ###   ########.fr       */
+/*   Updated: 2016/12/03 12:01:01 by adenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static char		*ft_fill_tab(char const *s, char c)
 	int		i;
 
 	i = 0;
-	str = (char *)malloc(sizeof(str) * ft_length(s, c) + 1);
+	str = (char *)malloc(sizeof(str) * ft_length(s, c) + 2);
 	if (str == NULL)
 		return (NULL);
 	while (s[i] != c && s[i])
@@ -52,7 +52,8 @@ static char		*ft_fill_tab(char const *s, char c)
 		str[i] = s[i];
 		i++;
 	}
-	str[i] = '\0';
+	str[i] = '.';
+	str[i + 1] = '\0';
 	return (str);
 }
 
