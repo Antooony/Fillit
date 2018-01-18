@@ -26,3 +26,12 @@ BB..
 BB..
 ....
 ```
+## Usage
+
+```
+$> make; ./fillit test_files/01.txt
+AAAA
+BB..
+BB..
+....
+```
