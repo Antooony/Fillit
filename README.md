@@ -32,7 +32,7 @@ On compile via le makefile
 ```
 $> make 
 ```
-On execute ./fillit [input_file]
+On execute ```./fillit [input_file]```, par exemple :
 ```
 ./fillit test_files/01.txt
 AAAA
