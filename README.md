@@ -28,8 +28,13 @@ BB..
 ```
 ## Usage
 
+On compile via le makefile
 ```
-$> make; ./fillit test_files/01.txt
+$> make 
+```
+On execute ./fillit [input_file]
+```
+./fillit test_files/01.txt
 AAAA
 BB..
 BB..
